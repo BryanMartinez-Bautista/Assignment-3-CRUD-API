@@ -1,4 +1,4 @@
-package com.CSC340.Assignment3;
+package com.CSC340.Assignment3.posts;
 
 public class BatmanCharacter {
     
