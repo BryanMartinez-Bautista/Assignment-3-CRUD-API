@@ -43,6 +43,9 @@ public class BatmanCharacter {
     @Column(nullable = false)
     private String imageUrl;
 
+    @Column(columnDefinition = "TEXT")
+    private String backstory;
+
     private String firstAppearance;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
@@ -51,7 +54,7 @@ public class BatmanCharacter {
     private String thumbnailUrl;
 
     public BatmanCharacter(String name, String role, String abilities,
-         String imageUrl, String description, String firstAppearance, String thumbnailUrl) {
+         String imageUrl, String description, String firstAppearance, String thumbnailUrl, String backstory) {
         this.name = name;
         this.role = role;
         this.abilities  = abilities;
@@ -59,6 +62,7 @@ public class BatmanCharacter {
         this.description = description;
         this.firstAppearance = firstAppearance;
         this.thumbnailUrl = thumbnailUrl;
+        this.backstory = backstory;
     }
 
     @PrePersist
