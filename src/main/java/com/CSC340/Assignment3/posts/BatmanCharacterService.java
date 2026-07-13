@@ -66,6 +66,7 @@ public class BatmanCharacterService {
         return characterRepository.findByNameContainingIgnoreCase(name);
     }
 
+    @SuppressWarnings({"UseSpecificCatch", "CallToPrintStackTrace"})
     public void saveThumbnail(BatmanCharacter batmanCharacter, MultipartFile thumbnailFile) {
         String originalFileName = thumbnailFile.getOriginalFilename();
         try {
