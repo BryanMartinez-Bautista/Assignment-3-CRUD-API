@@ -48,13 +48,17 @@ public class BatmanCharacter {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime createdAt;
 
-    public BatmanCharacter(String name, String role, String abilities, String imageUrl, String description, String firstAppearance) {
+    private String thumbnailUrl;
+
+    public BatmanCharacter(String name, String role, String abilities,
+         String imageUrl, String description, String firstAppearance, String thumbnailUrl) {
         this.name = name;
         this.role = role;
         this.abilities  = abilities;
         this.imageUrl = imageUrl;
         this.description = description;
         this.firstAppearance = firstAppearance;
+        this.thumbnailUrl = thumbnailUrl;
     }
 
     @PrePersist

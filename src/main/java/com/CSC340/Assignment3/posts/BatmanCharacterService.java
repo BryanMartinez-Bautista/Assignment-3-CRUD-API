@@ -1,13 +1,21 @@
 package com.CSC340.Assignment3.posts;
 
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class BatmanCharacterService {
 
     private final BatmanCharacterRepository characterRepository;
+
+    private static final String UPLOAD_DIR = "src/main/resources/static/images/";
 
     public BatmanCharacterService(BatmanCharacterRepository characterRepository) {
         this.characterRepository = characterRepository;
@@ -58,4 +66,21 @@ public class BatmanCharacterService {
         return characterRepository.findByNameContainingIgnoreCase(name);
     }
 
+    public void saveThumbnail(BatmanCharacter batmanCharacter, MultipartFile thumbnailFile) {
+        String originalFileName = thumbnailFile.getOriginalFilename();
+        try {
+            String fileExtension = originalFileName.substring(originalFileName.lastIndexOf(".") + 1);
+            String fileName = "batmanCharacter_" + batmanCharacter.getCharacterId() + "." + fileExtension;
+            Path filePath = Paths.get(UPLOAD_DIR + fileName);
+            InputStream inputStream = thumbnailFile.getInputStream();
+
+            Files.createDirectories(Paths.get(UPLOAD_DIR));
+            Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
+
+            batmanCharacter.setThumbnailUrl(fileName);
+            characterRepository.save(batmanCharacter);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
