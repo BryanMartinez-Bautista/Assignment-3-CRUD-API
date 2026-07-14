@@ -64,6 +64,7 @@
                     </div>
 
                     <div class="text-center mt-5">
+                        <a href="/batmanCharacters/delete/${batmanCharacter.characterId?c}" class="btn btn-danger"> Delete Character</a>
                         <a href="/batmanCharacters/updateForm/${batmanCharacter.characterId?c}" class="btn btn-warning"> Edit Character</a>
                         <a href="/batmanCharacters" class="btn btn-danger btn-lg">View All Characters</a>
                     </div>
