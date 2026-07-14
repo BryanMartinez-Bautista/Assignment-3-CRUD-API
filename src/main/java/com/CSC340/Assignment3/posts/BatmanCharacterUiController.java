@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
-//Rest Controller
+//Controller
 @Controller
 @RequestMapping("/batmanCharacters")
 public class BatmanCharacterUiController {
