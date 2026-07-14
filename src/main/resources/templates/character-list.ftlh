@@ -20,7 +20,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link active" href="/batmanCharacters">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/batmanCharacters/about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="/batmanCharacters/new">Add a Character</a></li>
                     </ul>
                 </div>
@@ -79,19 +79,11 @@
 
                                 <h5 class="card-title">${character.name}</h5>
 
-                                <p class="mb-2">
-                                    <span class="badge bg-batman">
-                                        ${character.role}
-                                    </span>
-                                </p>
+                                <p class="mb-2"> <span class="badge bg-batman"> ${character.role} </span> </p>
 
-                                <p class="card-text flex-grow-1">
-                                    ${character.description}
-                                </p>
+                                <p class="card-text flex-grow-1"> ${character.description}</p>
 
-                                <a href="/batmanCharacters/${character.characterId}" class="btn btn-danger">
-                                    View Details
-                                </a>
+                                <a href="/batmanCharacters/${character.characterId}" class="btn btn-danger"> View Details</a>
 
                             </div>
                         </div>

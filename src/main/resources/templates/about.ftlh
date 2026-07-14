@@ -19,7 +19,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="/batmanCharacters">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="/about">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/batmanCharacters/about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="/batmanCharacters/new">Add a Character</a></li>
                     </ul>
                 </div>
