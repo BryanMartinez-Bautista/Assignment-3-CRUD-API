@@ -38,21 +38,24 @@
                 <!-- Search and Filter Section -->
                 <div class="card mb-4 search-card">
                     <div class="card-body">
-                        <div class="row mb-3">
-                            <div class="col-md-9">
-                                <input type="text" placeholder="Search by character name or role..."
-                                    class="form-control form-control-lg">
+                        <form action="/batmanCharacters/search" method="get">
+                            <div class="row mb-3">
+                                <div class="col-md-9">
+                                    <input type="text" name="query" placeholder="Search by character name..." 
+                                        class="form-control form-control-lg">
+                                </div>
+
+                                <div class="col-md-3">
+                                    <button type="submit" class="btn btn-light w-100"> Search</button>
+                                </div>
                             </div>
-                            <div class="col-md-3">
-                                <button class="btn btn-light w-100">Clear</button>
-                            </div>
-                        </div>
+                        </form>
                         <div class="filter-buttons d-flex flex-wrap gap-2">
-                            <button class="btn btn-outline-primary active">All Characters</button>
-                            <button class="btn btn-outline-primary">Vigilante Hero</button>
-                            <button class="btn btn-outline-primary">Villain</button>
-                            <button class="btn btn-outline-primary">Sidekick</button>
-                            <button class="btn btn-outline-primary">Ally</button>
+                            <a href="/batmanCharacters" class="btn btn-outline-primary"> All Characters</a>
+                            <a href="/batmanCharacters/role?role=Hero" class="btn btn-outline-primary"> Vigilante Hero</a>
+                            <a href="/batmanCharacters/role?role=Villain" class="btn btn-outline-primary"> Villain</a>
+                            <a href="/batmanCharacters/role?role=Sidekick" class="btn btn-outline-primary"> Sidekick</a>
+                            <a href="/batmanCharacters/role?role=Ally" class="btn btn-outline-primary"> Ally</a>
                         </div>
                     </div>
                 </div>

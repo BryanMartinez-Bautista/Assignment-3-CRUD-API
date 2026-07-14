@@ -93,4 +93,13 @@ public class BatmanCharacterUiController {
         public String about(){
         return "about";
     }
+    
+    @GetMapping("/role")
+    public String filterByRole(String role, Model model){
+        model.addAttribute("charactersList", batmanCharacterService.getCharactersByRole(role));
+
+        model.addAttribute("pageTitle", role + "Characters");
+
+        return "character-list";
+    }
 }
