@@ -43,6 +43,7 @@ public class BatmanCharacterService {
             existingCharacter.setAbilities(updatedCharacter.getAbilities());
             existingCharacter.setImageUrl(updatedCharacter.getImageUrl());
             existingCharacter.setFirstAppearance(updatedCharacter.getFirstAppearance());
+            existingCharacter.setBackstory(updatedCharacter.getBackstory());
 
             return characterRepository.save(existingCharacter);
         }
