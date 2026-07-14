@@ -61,7 +61,7 @@
                             </h5>
 
 
-                            <form action="/batmanCharacters/update" method="post">
+                            <form action="/batmanCharacters/update/${batmanCharacter.characterId?c}" method="post" enctype="multipart/form-data">
 
                                 <input type="hidden" name="characterId" value="${batmanCharacter.characterId}">
 
@@ -86,11 +86,25 @@
 
                                     <select name="role" class="form-select" required>
 
-                                        <option value="Hero">Hero</option>
-                                        <option value="Villain">Villain</option>
-                                        <option value="Anti-hero">Anti-hero</option>
-                                        <option value="Ally">Ally</option>
-                                        <option value="Sidekick">Sidekick</option>
+                                        <option value="Hero" <#if batmanCharacter.role == "Hero">selected</#if>>
+                                            Hero
+                                        </option>
+
+                                        <option value="Villain" <#if batmanCharacter.role == "Villain">selected</#if>>
+                                            Villain
+                                        </option>
+
+                                        <option value="Anti-hero" <#if batmanCharacter.role == "Anti-hero">selected</#if>>
+                                            Anti-hero
+                                        </option>
+
+                                        <option value="Ally" <#if batmanCharacter.role == "Ally">selected</#if>>
+                                            Ally
+                                        </option>
+
+                                        <option value="Sidekick" <#if batmanCharacter.role == "Sidekick">selected</#if>>
+                                            Sidekick
+                                        </option>
 
                                     </select>
 
@@ -164,7 +178,7 @@
                                         Update Character
                                     </button>
 
-                                    <a href="/batmanCharacters"
+                                    <a href="/batmanCharacters/${batmanCharacter.characterId?c}"
                                        class="btn btn-outline-secondary">
                                         Cancel
                                     </a>
