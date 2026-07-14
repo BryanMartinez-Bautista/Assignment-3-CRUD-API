@@ -26,6 +26,14 @@ public class BatmanCharacterUiController {
         return "character-list";
     }
 
+    @GetMapping("/updateForm/{id}")
+    public Object showUpdateForm(@PathVariable Long id, Model model) {
+        BatmanCharacter batmanCharacter= batmanCharacterService.getCharacterById(id);
+        model.addAttribute("batmanCharacter", batmanCharacter);
+        model.addAttribute("title", "Update Character: " + id);
+        return "character-update";
+    }
+
     @GetMapping("/{id}")
     public String getCharacterById(@PathVariable Long id, Model model) {
         BatmanCharacter batmanCharacter = batmanCharacterService.getCharacterById(id);
@@ -63,7 +71,7 @@ public class BatmanCharacterUiController {
     }
 
     @PostMapping("/update/{id}")
-    public String updateCharacters(@PathVariable Long id, BatmanCharacter updatedCharacter, MultipartFile thumbnailFile) {
+    public String updateCharacter(@PathVariable Long id, BatmanCharacter updatedCharacter, MultipartFile thumbnailFile) {
         BatmanCharacter batmanCharacter = batmanCharacterService.updateCharacter(id, updatedCharacter);
         if (batmanCharacter != null) {
         if (thumbnailFile != null && !thumbnailFile.isEmpty()) {
@@ -79,5 +87,10 @@ public class BatmanCharacterUiController {
         model.addAttribute("charactersList", batmanCharacterService.searchCharacters(query));
         model.addAttribute("pageTitle", "Search Results for: " + query);
         return "character-list";
+    }
+
+    @GetMapping("/about")
+        public String about(){
+        return "about";
     }
 }
